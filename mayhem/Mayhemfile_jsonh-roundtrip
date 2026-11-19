@@ -1,0 +1,12 @@
+project: savantenvs/json.h
+target: jsonh-roundtrip
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/jsonh-roundtrip/testsuite
+
+cmds:
+  - cmd: /mayhem/jsonh-roundtrip
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/jsonh-roundtrip/jsonh-roundtrip.dict

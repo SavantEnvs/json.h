@@ -1,0 +1,12 @@
+project: savantenvs/json.h
+target: jsonh-fuzz
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/jsonh-fuzz/testsuite
+
+cmds:
+  - cmd: /mayhem/jsonh-fuzz
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/jsonh-fuzz/jsonh-fuzz.dict
